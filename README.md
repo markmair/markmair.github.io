@@ -1,5 +1,13 @@
 # [markmair.github.io](https://markmair.github.io)
 
+## Build
+
+`bundle exec jekyll build`
+
+## Run locally
+
+`bundle exec jekyll serve --watch`
+
 ## TODO
 
 - Colors
