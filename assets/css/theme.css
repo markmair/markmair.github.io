@@ -2,6 +2,41 @@
  * Mundana Jekyll Theme (https://www.wowthemes.net/mundana-jekyll-theme/)
  */
 
+ :root {
+	--rose-madder: hsla(356, 74%, 52%, 1); /* Used: Brand header, LOGO */
+	--sea-green: hsla(132, 44%, 96%, 0.95);
+	--baby-pink: hsla(9, 60%, 82%, 0.95);
+	--golden-brown: hsla(37, 63%, 34%, 0.95);
+	--indigo: hsla(271, 95%, 26%, 0.95);
+	--army-green: hsla(80, 45%, 22%, 0.95);
+	--eggplant-grey: hsla(270, 77%, 15%, 0.9); /* Used: Post title */
+
+	--antique-brass: hsla(21, 43%, 65%, 1);
+	--champagne-pink: hsla(22, 43%, 88%, 1); /* Used: BG, LOGO */
+	--linen: hsla(26, 100%, 95%, 1); /* Used: Brand */
+	--isabelline: hsla(48, 14%, 93%, 1);
+	--desert-sand: hsla(24, 43%, 76%, 1);
+	--artichoke: hsla(60, 12%, 60%, 1);
+	--ash-gray: hsla(60, 12%, 68%, 1);
+
+	--purple: hsla(278, 100%, 36%, 1);
+	--french-violet: hsla(263, 60%, 48%, 1); /* Used: Title hover, Category, LOGO */
+	--slate-blue: hsla(239, 53%, 59%, 1);
+	--tufts-blue: hsla(213, 64%, 59%, 1);
+	--blue-jeans: hsla(203, 69%, 59%, 1);
+	--vivid-sky-blue: hsla(194, 73%, 59%, 1);
+	--sky-blue-crayola: hsla(188, 70%, 61%, 1);
+	--medium-turquoise: hsla(180, 66%, 63%, 1);
+	--turquoise: hsla(171, 80%, 69%, 1);
+	--aquamarine: hsla(163, 100%, 75%, 1);
+
+	--coral: hsla(271, 56%, 50%, 0.9);
+	--mid-grey: hsla(0, 0, 50%, 0.9);
+	--grellow: hsla(66, 100%, 47%, 1); /* Used: LOGO */
+
+	--merlot: hsla(340, 68%, 28%, 0.9);
+ }
+
 body {
 	overflow-x:hidden;
 	padding-top:69.75px;
@@ -205,7 +240,7 @@ a.text-dark:hover {
 .navbar-brand {
 	margin-right:2rem;
 	font-size:1.55rem;
-    font-family:"Georgia","Times New Roman",serif;
+    font-family:'font-family-brand',serif;
 }
 .dropdown-item {
 	font-weight:400;
@@ -228,17 +263,27 @@ a.text-dark:hover {
 	}
 }
 .navbar-light .navbar-brand {
-	color:rgba(0,0,0,0.9);
+	color: var(--rose-madder);
+	transition: color 0.6s, text-shadow 0.2s;
 }
 .navbar-light .navbar-brand:hover,.navbar-light .navbar-brand:focus {
-	color:rgba(0,0,0,0.9);
+	color: var(--linen);
+	text-shadow:
+	0vw 0vw 0.6vw var(--rose-madder),
+	0vw 0vw 1.2vw var(--rose-madder),
+	0.6vw 0vw 1.6vw var(--french-violet),
+	1.2vw 0vw 1.6vw var(--french-violet),
+	1.8vw 0vw 1.6vw var(--french-violet),
+	0vw 0vw 1.4vw var(--grellow),
+	0vw 0vw 2.8vw var(--grellow),
+	0vw 0vw 4.2vw var(--grellow);
 }
 .navbar-light .navbar-nav .nav-link {
 	color:rgba(0,0,0,0.5);
 	font-size: .93rem;
 }
 .navbar-light .navbar-nav .nav-link:hover,.navbar-light .navbar-nav .nav-link:focus {
-	color:rgba(228, 95, 95, 0.7);
+	color:var(--french-violet);
 }
 .navbar-light .navbar-nav .nav-link.disabled {
 	color:rgba(0,0,0,0.3);
@@ -803,4 +848,66 @@ div.a2a_full_footer {display:none;}
 		 height:280px !Important;
 	 }
  }
- 
+
+
+@font-face {
+	font-family: 'font-family-list-post-title';
+	src: url(../../assets/fonts/IBMPlexMono-SemiBold.ttf);
+}
+
+@font-face {
+	font-family: 'font-family-brand';
+	src: url(../../assets/fonts/IBMPlexMono-TextItalic.ttf);
+}
+@font-face {
+	font-family: 'font-family-text-category';
+	src: url(../../assets/fonts/IBMPlexSans-MediumItalic.ttf);
+}
+@font-face {
+	font-family: 'font-family-text-date';
+	src: url(../../assets/fonts/IBMPlexMono-Light.ttf);
+}
+@font-face {
+	font-family: 'font-family-body-excerpt';
+	src: url(../../assets/fonts/IBMPlexSans-Regular.ttf);
+}
+
+.bg-theme {
+	background-color: var(--champagne-pink);
+}
+body {
+	background-color: var(--champagne-pink);
+}
+.card {
+	background-color: var(--champagne-pink);
+}
+.list-post-title {
+	font-family: 'font-family-list-post-title' !important;
+	color: var(--eggplant-grey) !important;
+	transition: color 0.3s;
+}
+.list-post-title:hover {
+	color: var(--coral) !important;
+}
+a.list-post-link:hover .list-post-title {
+	color: var(--coral) !important;
+}
+.text-category {
+	color: var(--merlot) !important;
+	transition: color 0.3s;
+	font-family: 'font-family-text-category';
+}
+.text-category:hover {
+	color: var(--rose-madder) !important;
+}
+.text-date {
+	font-family: 'font-family-text-date';
+}
+.excerpt {
+	color: var(--eggplant-grey) !important;
+	transition: color 0.3s;
+	font-family: 'font-family-body-excerpt';
+}
+a.list-post-link:hover .excerpt {
+	color: var(--french-violet) !important;
+}

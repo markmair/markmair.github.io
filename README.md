@@ -10,7 +10,6 @@
 
 ## TODO
 
-- Colors
 - Front page formatting
 - Feeds per category, tag
 - Category, Tag page formatting
